@@ -13,7 +13,7 @@ function App() {
 
     try {
       const res = await axios.post(
-        "https://YOUR-BACKEND.onrender.com/analyze",
+        "https://ai-powered-resume-analyser-2.onrender.com",
         formData
       );
       setResult(res.data);
