@@ -13,7 +13,7 @@ function App() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/analyze",
+        "https://YOUR-BACKEND.onrender.com/analyze",
         formData
       );
       setResult(res.data);
@@ -26,17 +26,14 @@ function App() {
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>AI Resume Analyzer</h1>
 
-      <input
-        type="file"
-        onChange={(e) => setFile(e.target.files[0])}
-      />
+      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
 
       <br /><br />
 
       <button onClick={handleUpload}>Analyze</button>
 
       {result && (
-        <div style={{ marginTop: "20px" }}>
+        <div>
           <h3>Score: {result.score}%</h3>
           <p>Matched: {result.matchedSkills.join(", ")}</p>
           <p>Missing: {result.missingSkills.join(", ")}</p>
